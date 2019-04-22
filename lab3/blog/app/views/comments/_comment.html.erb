@@ -1,0 +1,12 @@
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title"><%= comment.commenter %></h5>
+        <%= comment.body %>
+    </div>
+    <%= link_to 'Destroy Comment', [comment.article, comment],
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>

@@ -1,0 +1,17 @@
+<%# stylesheet_link_tag "articles" %>
+<div class="starter-template">
+    <h1><%= @article.title %></h1>
+    <p class="lead"><%= @article.text %></p>
+
+    <%= render 'comments/form' %>
+
+    <%= render 'comments/comment' %>
+
+</div>
+<br>
+
+ <% if can? :edit, @article %>
+<%= link_to 'Edit Article', edit_article_path(@article), class:"btn btn-primary" %>
+<% end %>
+<br>
+<%= link_to 'Back', articles_path %>
